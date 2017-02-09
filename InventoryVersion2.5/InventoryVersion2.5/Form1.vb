@@ -39,11 +39,11 @@ SaveErr:
         Me.Close()
     End Sub
 
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles btnSelfDestruct.Click
         Timer1.Enabled = True
         lblTimer.Visible = True
         lblTimer.BringToFront()
-     
+       
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -51,6 +51,10 @@ SaveErr:
         If lblTimer.Text = 0 Then
             Timer1.Enabled = False
             MessageBox.Show("YOU FOOL NOW WE'RE ALL GOING TO DIE!!!! ")
+        End If
+        If lblTimer.Text = 0 Then
+            picBoom.BringToFront()
+            picBoom.Visible = True
         End If
 
     End Sub

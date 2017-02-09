@@ -27,6 +27,14 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.QtyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LocationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PartDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PartDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WeightouncesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InventorySheet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Database1DataSet = New InventoryVersion2._5.Database1DataSet()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
@@ -47,23 +55,17 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Database1DataSet = New InventoryVersion2._5.Database1DataSet()
-        Me.InventorySheet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.btnSelfDestruct = New System.Windows.Forms.Button()
         Me.InventorySheet1TableAdapter = New InventoryVersion2._5.Database1DataSetTableAdapters.InventorySheet1TableAdapter()
-        Me.QtyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LocationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PartDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PartDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.WeightouncesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.lblTimer = New System.Windows.Forms.Label()
+        Me.picBoom = New System.Windows.Forms.PictureBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.Database1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InventorySheet1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Database1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.picBoom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button4
@@ -105,6 +107,52 @@ Partial Class Form1
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(638, 227)
         Me.DataGridView1.TabIndex = 0
+        '
+        'QtyDataGridViewTextBoxColumn
+        '
+        Me.QtyDataGridViewTextBoxColumn.DataPropertyName = "Qty"
+        Me.QtyDataGridViewTextBoxColumn.HeaderText = "Qty"
+        Me.QtyDataGridViewTextBoxColumn.Name = "QtyDataGridViewTextBoxColumn"
+        '
+        'LocationDataGridViewTextBoxColumn
+        '
+        Me.LocationDataGridViewTextBoxColumn.DataPropertyName = "Location"
+        Me.LocationDataGridViewTextBoxColumn.HeaderText = "Location"
+        Me.LocationDataGridViewTextBoxColumn.Name = "LocationDataGridViewTextBoxColumn"
+        '
+        'PartDataGridViewTextBoxColumn
+        '
+        Me.PartDataGridViewTextBoxColumn.DataPropertyName = "Part#"
+        Me.PartDataGridViewTextBoxColumn.HeaderText = "Part#"
+        Me.PartDataGridViewTextBoxColumn.Name = "PartDataGridViewTextBoxColumn"
+        '
+        'PartDescriptionDataGridViewTextBoxColumn
+        '
+        Me.PartDescriptionDataGridViewTextBoxColumn.DataPropertyName = "Part Description"
+        Me.PartDescriptionDataGridViewTextBoxColumn.HeaderText = "Part Description"
+        Me.PartDescriptionDataGridViewTextBoxColumn.Name = "PartDescriptionDataGridViewTextBoxColumn"
+        '
+        'WeightouncesDataGridViewTextBoxColumn
+        '
+        Me.WeightouncesDataGridViewTextBoxColumn.DataPropertyName = "Weight (ounces)"
+        Me.WeightouncesDataGridViewTextBoxColumn.HeaderText = "Weight (ounces)"
+        Me.WeightouncesDataGridViewTextBoxColumn.Name = "WeightouncesDataGridViewTextBoxColumn"
+        '
+        'PriceDataGridViewTextBoxColumn
+        '
+        Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
+        Me.PriceDataGridViewTextBoxColumn.HeaderText = "Price"
+        Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
+        '
+        'InventorySheet1BindingSource
+        '
+        Me.InventorySheet1BindingSource.DataMember = "InventorySheet1"
+        Me.InventorySheet1BindingSource.DataSource = Me.Database1DataSet
+        '
+        'Database1DataSet
+        '
+        Me.Database1DataSet.DataSetName = "Database1DataSet"
+        Me.Database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btnClose
         '
@@ -294,69 +342,23 @@ Partial Class Form1
         Me.Label16.TabIndex = 74
         Me.Label16.Text = "Inventory"
         '
-        'Button9
+        'btnSelfDestruct
         '
-        Me.Button9.BackColor = System.Drawing.Color.DarkRed
-        Me.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Button9.Cursor = System.Windows.Forms.Cursors.No
-        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button9.Location = New System.Drawing.Point(293, 391)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(343, 69)
-        Me.Button9.TabIndex = 84
-        Me.Button9.Text = "SELF DESTRUCT"
-        Me.Button9.UseVisualStyleBackColor = False
-        '
-        'Database1DataSet
-        '
-        Me.Database1DataSet.DataSetName = "Database1DataSet"
-        Me.Database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'InventorySheet1BindingSource
-        '
-        Me.InventorySheet1BindingSource.DataMember = "InventorySheet1"
-        Me.InventorySheet1BindingSource.DataSource = Me.Database1DataSet
+        Me.btnSelfDestruct.BackColor = System.Drawing.Color.DarkRed
+        Me.btnSelfDestruct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnSelfDestruct.Cursor = System.Windows.Forms.Cursors.No
+        Me.btnSelfDestruct.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelfDestruct.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnSelfDestruct.Location = New System.Drawing.Point(293, 391)
+        Me.btnSelfDestruct.Name = "btnSelfDestruct"
+        Me.btnSelfDestruct.Size = New System.Drawing.Size(343, 70)
+        Me.btnSelfDestruct.TabIndex = 84
+        Me.btnSelfDestruct.Text = "SELF DESTRUCT"
+        Me.btnSelfDestruct.UseVisualStyleBackColor = False
         '
         'InventorySheet1TableAdapter
         '
         Me.InventorySheet1TableAdapter.ClearBeforeFill = True
-        '
-        'QtyDataGridViewTextBoxColumn
-        '
-        Me.QtyDataGridViewTextBoxColumn.DataPropertyName = "Qty"
-        Me.QtyDataGridViewTextBoxColumn.HeaderText = "Qty"
-        Me.QtyDataGridViewTextBoxColumn.Name = "QtyDataGridViewTextBoxColumn"
-        '
-        'LocationDataGridViewTextBoxColumn
-        '
-        Me.LocationDataGridViewTextBoxColumn.DataPropertyName = "Location"
-        Me.LocationDataGridViewTextBoxColumn.HeaderText = "Location"
-        Me.LocationDataGridViewTextBoxColumn.Name = "LocationDataGridViewTextBoxColumn"
-        '
-        'PartDataGridViewTextBoxColumn
-        '
-        Me.PartDataGridViewTextBoxColumn.DataPropertyName = "Part#"
-        Me.PartDataGridViewTextBoxColumn.HeaderText = "Part#"
-        Me.PartDataGridViewTextBoxColumn.Name = "PartDataGridViewTextBoxColumn"
-        '
-        'PartDescriptionDataGridViewTextBoxColumn
-        '
-        Me.PartDescriptionDataGridViewTextBoxColumn.DataPropertyName = "Part Description"
-        Me.PartDescriptionDataGridViewTextBoxColumn.HeaderText = "Part Description"
-        Me.PartDescriptionDataGridViewTextBoxColumn.Name = "PartDescriptionDataGridViewTextBoxColumn"
-        '
-        'WeightouncesDataGridViewTextBoxColumn
-        '
-        Me.WeightouncesDataGridViewTextBoxColumn.DataPropertyName = "Weight (ounces)"
-        Me.WeightouncesDataGridViewTextBoxColumn.HeaderText = "Weight (ounces)"
-        Me.WeightouncesDataGridViewTextBoxColumn.Name = "WeightouncesDataGridViewTextBoxColumn"
-        '
-        'PriceDataGridViewTextBoxColumn
-        '
-        Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
-        Me.PriceDataGridViewTextBoxColumn.HeaderText = "Price"
-        Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
         '
         'Timer1
         '
@@ -367,13 +369,24 @@ Partial Class Form1
         Me.lblTimer.BackColor = System.Drawing.Color.Black
         Me.lblTimer.Font = New System.Drawing.Font("Impact", 90.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTimer.ForeColor = System.Drawing.Color.Maroon
-        Me.lblTimer.Location = New System.Drawing.Point(-8, -1)
+        Me.lblTimer.Location = New System.Drawing.Point(12, 20)
         Me.lblTimer.Name = "lblTimer"
-        Me.lblTimer.Size = New System.Drawing.Size(952, 576)
+        Me.lblTimer.Size = New System.Drawing.Size(932, 555)
         Me.lblTimer.TabIndex = 85
         Me.lblTimer.Text = "5"
         Me.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblTimer.Visible = False
+        '
+        'picBoom
+        '
+        Me.picBoom.Image = Global.InventoryVersion2._5.My.Resources.Resources.giphy
+        Me.picBoom.Location = New System.Drawing.Point(0, -1)
+        Me.picBoom.Name = "picBoom"
+        Me.picBoom.Size = New System.Drawing.Size(944, 566)
+        Me.picBoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picBoom.TabIndex = 1
+        Me.picBoom.TabStop = False
+        Me.picBoom.Visible = False
         '
         'Form1
         '
@@ -381,7 +394,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightSlateGray
         Me.ClientSize = New System.Drawing.Size(943, 564)
-        Me.Controls.Add(Me.Button9)
+        Me.Controls.Add(Me.btnSelfDestruct)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnDelete)
@@ -394,14 +407,16 @@ Partial Class Form1
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lblTimer)
+        Me.Controls.Add(Me.picBoom)
         Me.Name = "Form1"
         Me.Text = "InventoryVersion2.5"
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InventorySheet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Database1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.Database1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.InventorySheet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBoom, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -430,7 +445,7 @@ Partial Class Form1
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents Button9 As System.Windows.Forms.Button
+    Friend WithEvents btnSelfDestruct As System.Windows.Forms.Button
     Friend WithEvents Database1DataSet As InventoryVersion2._5.Database1DataSet
     Friend WithEvents InventorySheet1BindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents InventorySheet1TableAdapter As InventoryVersion2._5.Database1DataSetTableAdapters.InventorySheet1TableAdapter
@@ -442,5 +457,6 @@ Partial Class Form1
     Friend WithEvents PriceDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents lblTimer As System.Windows.Forms.Label
+    Friend WithEvents picBoom As System.Windows.Forms.PictureBox
 
 End Class
